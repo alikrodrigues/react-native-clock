@@ -24,3 +24,7 @@ export function multiply(a: number, b: number): Promise<number> {
 export function isTimeAutomatic(): Promise<number> {
   return Clock.isTimeAutomatic();
 }
+
+export function isBluetoothEnabled(): Promise<boolean> {
+  return Clock.isBluetoothEnabled();
+}

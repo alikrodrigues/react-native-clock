@@ -2,7 +2,8 @@
   package="com.example.reactnativeclock">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"

@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
+import android.bluetooth.BluetoothAdapter;
 
 @ReactModule(name = ClockModule.NAME)
 public class ClockModule extends ReactContextBaseJavaModule {
@@ -40,4 +41,12 @@ public class ClockModule extends ReactContextBaseJavaModule {
     } 
 
     public static native int nativeIsTimeAutomatic();
+
+    @ReactMethod
+    public void isBluetoothEnabled(Promise promise) {
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        promise.resolve(mBluetoothAdapter.isEnabled());
+    }
+
+    public static native int nativeIsBluetoothEnabled();
 }
